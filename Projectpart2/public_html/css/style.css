@@ -1,0 +1,163 @@
+body {
+	background-image: url('/images/pattern-001.jpg');	
+}
+
+div.container {
+	background-image: url("/images/img1.jpg");
+	background-color: #FFF;
+	border-radius: 5px;
+	border: 1px solid #000;
+}
+
+.left-inner-addon {
+	position: relative;
+}
+
+.left-inner-addon input {
+	padding-left: 30px;
+}
+
+.left-inner-addon i {
+	position: absolute;
+	padding: 10px 12px;
+	pointer-events: none;
+}
+
+.right-inner-addon {
+	position: relative;
+}
+
+.right-inner-addon input {
+	padding-right: 30px;
+}
+
+.right-inner-addon i {
+	position: absolute;
+	right: 0px;
+	padding: 10px 12px;
+	pointer-events: none;
+}
+
+li.odd {
+	background-color: #ccc;
+}
+
+li.even {
+	background-color: #fff;
+}
+
+.employee-widget {
+	border-radius: 4px;
+	border: 1px solid #ccc;
+}
+
+.card {
+	height: 500px;
+	min-height: 500px;
+	max-height: 500px;
+	overflow: hidden;
+}
+
+.card-small {
+	height: 100px;
+	min-height: 100px;
+	max-height: 100px;
+	overflow: hidden;
+}
+
+.card .card-inner {
+	border: 4px solid #CCC;
+	border-radius: 10px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	height: 480px;
+	cursor: pointer;
+	overflow:hidden;
+}
+
+.card-small .card-inner {
+	border: 2px solid #CCC;
+	border-radius: 5px;
+	height: 80px;
+	cursor: pointer;
+	overflow:hidden;
+}
+
+.card .card-inner:hover, .card .card-inner:active, .card .card-inner:focus {
+	border: 4px solid #00FF00;
+}
+
+.card-small .card-inner:hover, .card-small .card-inner:active, .card-small .card-inner:focus {
+	border: 2px solid #00FF00;
+}
+
+.card .card-inner img.img-thumbnail {
+	max-height: 250px;
+}
+
+@media screen and (max-width: 992px) and (min-width: 768px) {
+	.card .card-inner img.img-thumbnail {
+		max-height: 200px;
+	}
+}
+
+.card-small .card-inner img.img-thumbnail {
+	max-height: 50px;
+}
+
+
+span.character-list {
+	color: blue;
+	text-decoration: underline;
+	cursor: pointer;
+	margin: 0px 2px;
+}
+
+span.character-list:hover, span.character-list:focus, span.character-list:active {
+	color: purple;
+}
+
+img.details {
+	max-height: 500px;
+}
+
+figure {
+	text-align:center;
+}
+
+#description img {
+	max-width: 50%;
+}
+
+img.js-lazy-load-image {
+	display: none;
+	visibility: hidden;
+}
+
+img.logo {
+	border-radius: 4px;
+}
+
+img {
+	max-width: 100%;
+}
+
+header.header {
+	height: 50px;
+}
+
+div.carousel div.carousel-inner div.item img {
+	height: 500px;
+}
+.carousel-caption {
+	background-image: url('/images/background-001.png');
+}
+div.homepage {
+	
+}
+.card-description {
+	max-height: 80px;
+	min-height: 80px;
+	height: 80px;
+	overflow-y: hidden;
+}

@@ -1,0 +1,80 @@
+<div class='container' style="min-height: 600px; border-top-right-radius: 0px; border-top-left-radius: 0px;padding-bottom:50px">
+	<div ng-show="message">
+		<div class="alert alert-danger" ng-bind="message"></div>
+	</div>
+	
+    <div ng-show="Character == null && search.length == 0 && !checkIsSearching()" class="col-lg-12 homepage">
+    	<br />
+    	<div class="col-md-6">
+    		<img src="/images/logo-001.jpg" class="img-responsive logo"/>
+			<div class="col-lg-12">
+                    <img src="/images/image.jpg" class="img-repsonsive logo"/>
+                    </div>  
+		</div>
+		<div class="col-md-6">
+			<div class="col-lg-12" style="text-align: center">
+				<div class="carousel slide" data-ride="carousel">
+					<!-- Indicators -->
+					<ol class="carousel-indicators">
+						<li data-target="#carousel-example-generic" data-slide-to="{{$index}}" ng-class="{active: $index == 0}" ng-repeat="slide in slides"></li>
+					</ol>
+					
+					
+					<div class="carousel-inner center-block" role="listbox" style="text-align: center">
+						<div class="item center-block" style="text-align: center" ng-class="{active: $index == 0}" ng-repeat="slide in slides">
+							<img ng-src="{{slide.src}}" class="img-responsive center-block" />
+							<div class="carousel-caption">
+								{{slide.text}}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>				
+    </div>
+   
+    <div ng-show="Characters.length == 0 && search.length > 0 && !checkIsSearching()" class="col-lg-12 search">
+    	<div class="col-lg-12 center-block" style="text-align:center">
+    		<img src="/images/no-results-001.jpg" class="img-rounded" />
+    		<div class="col-lg-12" style="text-align: center">
+    			<h2>Oops!! Sorry no results found<br /><small>Search  Another Character</small></h2>
+    		</div>
+    	</div>
+    </div>
+   
+    <div ng-show="Characters.length > 0 && search.length > 0" class="col-lg-12 view">
+    	<div class="col-sm-4 card" ng-repeat="Character in Characters | filter: {name: search.toLowerCase()} | orderBy: 'name'">
+    		<div class="col-sm-12 card-inner" ng-click="setActiveCardId(Character.id)" ng-init="isActiveCard(Character.id,$first)">
+    			<div class="row header center-block col-sm-12">
+        			<h2>{{Character.name.substr(0,14)}}{{Character.name.length > 14 ? "..." :""}}<br /><small>{{Character.real_name}}&nbsp;</small></h2>
+        		</div>
+        		<div class="row image center-block col-sm-12">
+        			<img ng-src="{{getImage(Character)}}" alt="{{Character.name}}" class="img-thumbnail center-block" />
+        		</div>
+        		<div class="row center-block col-sm-12 card-description" ng-show="activeCardId == Character.id">
+        			{{Character.deck}}
+        		</div>
+        		<div class="row center-block col-sm-12" ng-show="activeCardId == Character.id" >
+        			<button class="btn btn-warning center-block" ng-click="loadCard(Character)">Details</button>
+        		</div>
+    		</div>
+    	</div>
+    	<div ng-show="hasNoResults() && !checkIsSearching()">
+        	<div class="col-lg-12 center-block" style="text-align:center">
+        		<img src="/images/no-results-001.jpg" class="img-rounded" />
+        		<div class="col-lg-12" style="text-align: center">
+        			<h2>Oops!! Sorry no results found<br /><small>Search  Another Character</small></h2>
+        		</div>
+        	</div>
+        </div>
+    </div>
+    
+    <div ng-show="checkIsSearching()" class="col-lg-12 search">
+    	<div class="col-lg-12 center-block" style="text-align:center">
+    		<img src="/images/searching-001.png" class="img-rounded center-block" />
+			<div class="col-lg-12" style="text-align: center">
+				<h2>Searching.....!! Please Wait..!!</h2>
+			</div>
+    	</div>
+    </div>
+</div>
