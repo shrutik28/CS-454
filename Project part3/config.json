@@ -1,0 +1,9 @@
+{
+	"api" : {
+		 
+		"comicvine": {
+			"api_key": "2b3538e2da59a32b1b37c665f5f488a50afa30e3",
+			"request_url": "http://www.comicvine.com/api"
+		}
+	}
+}
