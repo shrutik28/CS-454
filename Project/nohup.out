@@ -1,0 +1,14 @@
+
+/var/www/sites/CS454/assignments/assignment5/app.js:16
+	console.log("Server is listening on port: " + port);
+	                                              ^
+ReferenceError: port is not defined
+    at Server.<anonymous> (/var/www/sites/CS454/assignments/assignment5/app.js:16:48)
+    at Server.g (events.js:180:16)
+    at Server.EventEmitter.emit (events.js:92:17)
+    at net.js:1052:10
+    at process._tickCallback (node.js:415:13)
+    at Function.Module.runMain (module.js:499:11)
+    at startup (node.js:119:16)
+    at node.js:902:3
+Server is listening on port: 8000

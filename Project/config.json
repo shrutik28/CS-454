@@ -1,0 +1,10 @@
+{
+	"api" : {
+		
+		"comicvine": {
+			"api_key": "4d8dbcedc77d981c1c654929036df27015bd17ca",
+			"request_url": "http://www.comicvine.com/api"
+		}
+	},
+	"port" : 8000
+}

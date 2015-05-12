@@ -1,0 +1,16 @@
+		<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation" ng-controller="DashboardCtrl" style="margin-bottom: 0px;">
+			<div class="">
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header">
+					<a class="navbar-brand" href="javascript:void(0)" ng-click="clear()">Marvel Character Finder</a>
+					<form class="navbar-form navbar-left" role="search">
+						<ui-select ng-model="search" theme="bootstrap">
+							<ui-select-match placeholder="Search..." style="width: 200px; text-align: left">{{$select.selected.name}}</ui-select-match>
+							<ui-select-choices repeat="character in characters | filter: {name: $select.search.toLowerCase()} | orderBy:'name'" refresh="refreshCharacters($select.search,true)" refresh-delay="0">
+								<div ng-bind-html="character.name | highlight: $select.search" ng-click="selectedCharacter([character])"></div>
+						    </ui-select-choices>
+					    </ui-select>
+			        </form>
+				</div>
+			</div>
+		</nav>
